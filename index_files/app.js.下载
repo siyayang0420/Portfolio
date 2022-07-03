@@ -1,0 +1,63 @@
+var bgDiv = document.querySelector('#bg');
+var preDiv = document.querySelector('#pre');
+var thumbs = document.querySelectorAll('.thumbs');
+var openBut= document.querySelector('#open');
+var stickerDisplay = document.querySelector('#stickerDisplay');
+var change = document.querySelector('#change');
+var sticker = document.querySelector('#sticker');
+
+
+bgDiv.addEventListener('click', function(){
+    preDiv.style.flex = 3; 
+});
+
+preDiv.addEventListener('click', function(){
+    preDiv.style.flex = 50;
+});
+
+thumbs[0].addEventListener('click', function(){
+    preDiv.style.backgroundImage = "url('../imgs/bg1.jpg')";
+});
+thumbs[1].addEventListener('click', function(){
+    preDiv.style.backgroundImage = thumbs[1].style.backgroundImage;
+});
+thumbs[2].addEventListener('click', function(){
+    preDiv.style.backgroundImage = thumbs[2].style.backgroundImage;
+});
+thumbs[3].addEventListener('click', function(){
+    preDiv.style.backgroundImage = thumbs[3].style.backgroundImage;
+});
+
+
+openBut.addEventListener('click', function(){
+    stickerDisplay.style.right = 100 + 'px';
+});
+
+change.addEventListener('click', function(){
+   sticker.src = "imgs/st2.png"; 
+})
+
+
+openBut.addEventListener('click', function(){
+    x = stickerDisplay.style.right
+    if(x = 0 + 'px'){
+        x = -100 + 'px';
+    } else {
+        x = 100 + 'px';
+    }
+});
+
+
+change.addEventListener('click', function(){
+    imgNum = 2;
+    if(imgNum<7){
+    imgNum = imgNum + 1;
+    sticker.src = "imgs/st"+imgNum+".png";
+    } else if (imgNum => 6){
+        sticker.src = "imgs/st"+imgNum+".png";
+    }
+})
+
+
+
+
